@@ -4,7 +4,7 @@ A new Flutter project for Hacktoberfest Project.
 
 
 
-<img align="center" src="https://github.com/Kitncdrc/Hacktoberfest/blob/main/HF%20_21%20Icons%20_%20Logos/Hacktoberfest_final_2color-06%20copy.png" height="40%" width="55%" />
+<img align="center" src="https://github.com/DevCom-Kanyakumari/flutter-starter-app/blob/master/img/Desktop%20BG%204K%20Dark%20Mode.png" height="40%" width="55%" />
 
 # Welcome to Hacktoberfest 2022
 

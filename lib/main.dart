@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'First push for Hacktoberfest happy hacking finally added repo in Hacktoberfest'
+              'First push for Hacktoberfest happy hacking finally added repo in Hacktoberfest, Contributor Rajesh Kannan M'
             ),
             Text(
               '$_counter',

@@ -1,7 +1,6 @@
-# my_app
+# Hacktoberfest with Flutter 🚀
 
 A new Flutter project for Hacktoberfest Project.
-
 
 
 <img align="center" src="https://github.com/DevCom-Kanyakumari/flutter-starter-app/blob/master/img/Desktop%20BG%204K%20Dark%20Mode.png" height="40%" width="55%" />
@@ -130,9 +129,13 @@ Rajesh Kannan M
 #### A GitHub conflict is when people make changes to the same area or line in a file. This must be fixed before it is merged in order to prevent collision in the main branch.
 
 
-
 ---
 
 ## <ins>Hacktoberfest community<ins>
+
+---
+## Application Main Screen
+
+<img src="https://github.com/DevCom-Kanyakumari/flutter-starter-app/blob/master/img/Screenshot%20from%202022-10-12%2023-12-59.png" height="20%" width="20%" />
 
 

@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
       title: 'Hacktoberfest',
       theme: ThemeData(
         
-        primarySwatch: Colors.black,
+        primarySwatch: Colors.indigo,
+        scaffoldBackgroundColor: Colors.indigo[700],
       ),
       home: const MyHomePage(title: 'Hacktoberfest 2022'),
     );
@@ -32,44 +33,58 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  
 
-  void _incrementCounter() {
-    setState(() {
-     
-      _counter++;
-    });
-  }
+  
 
   @override
   Widget build(BuildContext context) {
    
     return Scaffold(
-      appBar: AppBar(
+      // appBar: AppBar(
        
-        title: Text(widget.title),
-      ),
+      //   title: Text(widget.title),
+      // ),
       body: Center(
        
         child: Column(
          
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'First push for Hacktoberfest happy hacking finally added repo in Hacktoberfest, Contributor Rajesh Kannan M'
+            const Image(
+  image: NetworkImage('https://hackthisfall.tech/_nuxt/img/hacktoberfest-logo.04e7168.png'),
+),
+            const   Padding(
+                          padding: EdgeInsets.only(left:15, bottom: 50, right: 20, top:40), //apply padding to some sides only
+                          child: Text(
+              'Hacktoberfest Contributor List ',
+
+              style: TextStyle(
+              color: Colors.white ,
+              fontWeight: FontWeight.w400,
+              fontStyle: FontStyle.italic,
+              fontFamily: 'Open Sans',
+              fontSize: 20,
+      
+      ),
+              
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+                        ),
+            Card(
+      child: ListTile(
+        title: Text('Sijin'),
+      ),
+    ),
+      Card(
+      child: ListTile(
+        title: Text('Rajesh Kannan M'),
+      ),
+    ),
+           
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), 
+      
     );
   }
 }

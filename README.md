@@ -121,8 +121,8 @@ Hurray! You successfully made a contribution! 🎉
 ---
 
 ## Contributors List
-Sijin Raj SR
-Rajesh Kannan M
+* [Sijin Raj SR](https://github.com/sijin-raj)
+* [Rajesh Kannan M](https://github.com/rajeshkannanoffl)
 
 ## What if I have a Conflict?
 

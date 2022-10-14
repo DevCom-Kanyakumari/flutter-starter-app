@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -72,15 +74,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
             Card(
       child: ListTile(
-        title: Text('Sijin'),
+        title: Text('Sijin Raj SR'),
+        onTap: () => launch('https://github.com/sijin-raj')
       ),
     ),
       Card(
       child: ListTile(
         title: Text('Rajesh Kannan M'),
+        onTap: () => launch('https://github.com/rajeshkannanoffl')
       ),
     ),
-           
           ],
         ),
       ),

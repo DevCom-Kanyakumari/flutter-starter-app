@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:my_app/pages/Login.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -73,6 +74,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ListTile(
                   title: Text('Rajesh Kannan M'),
                   onTap: () => launch('https://github.com/rajeshkannanoffl')),
+            ),
+            Card(
+              child: ListTile(
+                  title: Text('Login or Sign up'),
+                  onTap: () =>  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) =>const LoginScreen())) ),
             ),
           ],
         ),

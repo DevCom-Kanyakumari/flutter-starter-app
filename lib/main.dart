@@ -1,13 +1,16 @@
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:my_app/pages/Login.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
+
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +20,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.indigo,
         scaffoldBackgroundColor: Colors.indigo[700],
       ),
-      home: const MyHomePage(title: 'Hacktoberfest 2022'),
+      debugShowCheckedModeBanner: false,
+      home: const MyHomePage(title:'Hacktoberfest'),
     );
   }
 }
@@ -73,6 +77,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ListTile(
                   title: Text('Rajesh Kannan M'),
                   onTap: () => launch('https://github.com/rajeshkannanoffl')),
+            ),
+            Card(
+              child: ListTile(
+                  title: Text('Move to login'),
+                  onTap: () => Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => LoginScreen()))),
             ),
           ],
         ),

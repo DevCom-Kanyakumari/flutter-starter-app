@@ -1,7 +1,10 @@
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/l10n/localization.dart';
 import 'package:my_app/pages/Login.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
 
 void main() async {
   // WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +24,16 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.indigo[700],
       ),
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: const [
+        MyLocalizationsDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en'),
+        Locale('de'),
+      ],
       home: const MyHomePage(title:'Hacktoberfest'),
     );
   }
@@ -80,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Card(
               child: ListTile(
-                  title: Text('Move to login'),
+                  title: Text(Localization.of(context)!.move_to_login),
                   onTap: () => Navigator.of(context).pushReplacement(
                       MaterialPageRoute(builder: (context) => LoginScreen()))),
             ),

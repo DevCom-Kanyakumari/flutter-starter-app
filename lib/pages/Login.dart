@@ -6,6 +6,7 @@
 
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/l10n/localization.dart';
 // import 'package:fluttertoast/fluttertoast.dart';
 import 'package:my_app/pages/home_page.dart';
 import 'package:my_app/pages/signup.dart';
@@ -41,12 +42,12 @@ class _LoginScreenState extends State<LoginScreen> {
         keyboardType: TextInputType.emailAddress,
         validator: (value) {
           if (value!.isEmpty) {
-            return ("Please Enter Your Email");
+            return (Localization.of(context)!.mail_needed);
           }
           // reg expression for email validation
           if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
               .hasMatch(value)) {
-            return ("Please Enter a valid email");
+            return (Localization.of(context)!.valid_mail);
           }
           return null;
         },
@@ -71,10 +72,10 @@ class _LoginScreenState extends State<LoginScreen> {
         validator: (value) {
           RegExp regex = new RegExp(r'^.{6,}$');
           if (value!.isEmpty) {
-            return ("Password is required for login");
+            return (Localization.of(context)!.pw_required);
           }
           if (!regex.hasMatch(value)) {
-            return ("Enter Valid Password(Min. 6 Character)");
+            return (Localization.of(context)!.pw_not_valid);
           }
         },
         onSaved: (value) {
@@ -84,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
         decoration: InputDecoration(
           prefixIcon: Icon(Icons.vpn_key),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Password",
+          hintText: Localization.of(context)!.pw,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
@@ -150,7 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text("Don't have an account? "),
+                          Text(Localization.of(context)!.no_account),
                           GestureDetector(
                             onTap: () {
                               Navigator.push(
@@ -160,7 +161,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           RegistrationScreen()));
                             },
                             child: Text(
-                              "SignUp",
+                              Localization.of(context)!.sign_up,
                               style: TextStyle(
                                   color: Colors.blue,
                                   fontWeight: FontWeight.bold,

@@ -122,11 +122,11 @@ class _LoginScreenState extends State<LoginScreen> {
     );
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.indigo[100],
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            color: Colors.white,
+            color: Colors.indigo[100],
             child: Padding(
               padding: const EdgeInsets.all(36.0),
               child: Form(

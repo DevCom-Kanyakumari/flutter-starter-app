@@ -15,12 +15,12 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.white,
       body: Center(
         child: ClipRRect(
-            borderRadius: BorderRadius.circular(8.0),
-            child: Image.asset(
-              'img/hello.gif',
-              fit: BoxFit.contain,
-              width: 400,
-            )),
+          child: Image.asset(
+            'img/hello.gif',
+            fit: BoxFit.contain,
+            width: 400,
+          ),
+        ),
       ),
     );
   }

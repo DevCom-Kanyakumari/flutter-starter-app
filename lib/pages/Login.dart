@@ -4,120 +4,6 @@
 //email-id
 //password
 
-<<<<<<< HEAD
-import 'package:flutter/material.dart';
- 
-void main() => runApp(const MyApp());
- 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
- 
-  static const String _title = 'Hacktober App';
- 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: _title,
-      home: Scaffold(
-        appBar: AppBar(title: const Text(_title)),
-        body: const MyStatefulWidget(),
-      ),
-    );
-  }
-}
- 
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
- 
-  @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
-}
- 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  TextEditingController nameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
- 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.all(10),
-        child: ListView(
-          children: <Widget>[
-            Container(
-                alignment: Alignment.center,
-                padding: const EdgeInsets.all(10),
-                child: const Text(
-                  'Hello, Welcome!',
-                  style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 30),
-                )),
-            Container(
-                alignment: Alignment.center,
-                padding: const EdgeInsets.all(10),
-                child: const Text(
-                  'Login',
-                  style: TextStyle(fontSize: 20),
-                )),
-            Container(
-              padding: const EdgeInsets.all(10),
-              child: TextField(
-                controller: nameController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'User Name',
-                ),
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: TextField(
-                obscureText: true,
-                controller: passwordController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Password',
-                ),
-              ),
-            ),
-            TextButton(
-              onPressed: () {
-                //forgot password screen
-              },
-              child: const Text('Forgot Password',),
-            ),
-            Container(
-                height: 50,
-                padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: ElevatedButton(
-                  child: const Text('Login'),
-                  onPressed: () {
-                    print(nameController.text);
-                    print(passwordController.text);
-                  },
-                )
-            ),
-            Row(
-              children: <Widget>[
-                const Text('Does not have account?'),
-                TextButton(
-                  child: const Text(
-                    'Sign up65o\k',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  onPressed: () {
-                    //signup screen
-                  },
-                )
-              ],
-              mainAxisAlignment: MainAxisAlignment.center,
-            ),
-          ],
-        ));
-  }
-}
-=======
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/l10n/localization.dart';
@@ -142,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   // firebase
   // final _auth = FirebaseAuth.instance;
-  
+
   // string for displaying the error Message
   String? errorMessage;
 
@@ -204,28 +90,28 @@ class _LoginScreenState extends State<LoginScreen> {
             borderRadius: BorderRadius.circular(10),
           ),
           suffixIcon: IconButton(
-                icon: Icon(
-                  _isObscure ? Icons.visibility : Icons.visibility_off,
-                ),
-                onPressed: () {
-                  setState(() {
-                    _isObscure = !_isObscure;
-                  });
-                },
-              ),
+            icon: Icon(
+              _isObscure ? Icons.visibility : Icons.visibility_off,
+            ),
+            onPressed: () {
+              setState(() {
+                _isObscure = !_isObscure;
+              });
+            },
+          ),
         ));
 
     final loginButton = Material(
       elevation: 5,
-      borderRadius: BorderRadius.circular(30),
-      color: Colors.redAccent,
+      borderRadius: BorderRadius.circular(10),
+      color: Colors.indigoAccent,
       child: MaterialButton(
           padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () {
             // signIn(emailController.text, passwordController.text);
-             Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => MyHomePage()));
+            Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => MyHomePage()));
           },
           child: Text(
             "Login",
@@ -252,7 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                         height: 200,
                         child: Image.network(
-                          "https://imgs.search.brave.com/EiBB7QXBTdr3Ih8VH-R88fy1V2e62v7QIVb8SAjyRpg/rs:fit:976:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5v/aU5jUGxxTHAyS1Vj/a2s1dnQ3REd3SGFE/bSZwaWQ9QXBp",
+                          "https://wallpaper.dog/large/17072023.jpg",
                           fit: BoxFit.contain,
                         )),
                     SizedBox(height: 45),
@@ -282,8 +168,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   fontSize: 15),
                             ),
                           )
-                        ]
-                        )
+                        ])
                   ],
                 ),
               ),
@@ -293,7 +178,6 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
- 
 
   // login function
   // void signIn(String email, String password) async {
@@ -336,4 +220,3 @@ class _LoginScreenState extends State<LoginScreen> {
   //   }
   // }
 }
->>>>>>> 395d26e657053d45785e0a0b0ea35438898d65bc

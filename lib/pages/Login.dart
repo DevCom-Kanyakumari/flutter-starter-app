@@ -122,11 +122,11 @@ class _LoginScreenState extends State<LoginScreen> {
     );
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.indigo[100],
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            color: Colors.white,
+            color: Colors.indigo[100],
             child: Padding(
               padding: const EdgeInsets.all(36.0),
               child: Form(
@@ -135,11 +135,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(
-                        height: 200,
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
                         child: Image.network(
                           "https://wallpaper.dog/large/17072023.jpg",
                           fit: BoxFit.contain,
+                          width: 400,
                         )),
                     SizedBox(height: 45),
                     emailField,

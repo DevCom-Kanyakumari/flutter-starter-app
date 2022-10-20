@@ -3,6 +3,8 @@
 //requirements to create account
 //email-id
 //password
+//conform password
+//updated-ui
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -20,10 +22,9 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   // final _auth = FirebaseAuth.instance;
-  
+
   // string for displaying the error Message
   String? errorMessage;
-
 
   // our form key
   final _formKey = GlobalKey<FormState>();
@@ -31,14 +32,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   final emailEditingController = new TextEditingController();
   final passwordEditingController = new TextEditingController();
   final confirmPasswordEditingController = new TextEditingController();
- 
 
   bool _isObscure = true;
 
-
   @override
   Widget build(BuildContext context) {
-
     //email field
     final emailField = TextFormField(
         autofocus: false,
@@ -66,8 +64,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
-        )
-        );
+        ));
 
     //password field
     final passwordField = TextFormField(
@@ -95,17 +92,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             borderRadius: BorderRadius.circular(10),
           ),
           suffixIcon: IconButton(
-                icon: Icon(
-                  _isObscure ? Icons.visibility : Icons.visibility_off,
-                ),
-                onPressed: () {
-                  setState(() {
-                    _isObscure = !_isObscure;
-                  });
-                },
-              ),
-        )
-        );
+            icon: Icon(
+              _isObscure ? Icons.visibility : Icons.visibility_off,
+            ),
+            onPressed: () {
+              setState(() {
+                _isObscure = !_isObscure;
+              });
+            },
+          ),
+        ));
 
     //confirm password field
     final confirmPasswordField = TextFormField(
@@ -131,30 +127,29 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             borderRadius: BorderRadius.circular(10),
           ),
           suffixIcon: IconButton(
-                icon: Icon(
-                  _isObscure ? Icons.visibility : Icons.visibility_off,
-                ),
-                onPressed: () {
-                  setState(() {
-                    _isObscure = !_isObscure;
-                  });
-                },
-              ),
-        )
-        );
+            icon: Icon(
+              _isObscure ? Icons.visibility : Icons.visibility_off,
+            ),
+            onPressed: () {
+              setState(() {
+                _isObscure = !_isObscure;
+              });
+            },
+          ),
+        ));
 
     //signup button
     final signUpButton = Material(
       elevation: 5,
-      borderRadius: BorderRadius.circular(30),
-      color: Colors.redAccent,
+      borderRadius: BorderRadius.circular(10),
+      color: Colors.indigo,
       child: MaterialButton(
           padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () {
             // signUp(emailEditingController.text, passwordEditingController.text);
-             Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => MyHomePage()));
+            Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => MyHomePage()));
           },
           child: Text(
             "SignUp",
@@ -164,15 +159,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           )),
     );
 
-
-
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.indigo[100],
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.red),
+          icon: Icon(Icons.arrow_back, color: Colors.indigoAccent),
           onPressed: () {
             // passing this to our root
             Navigator.of(context).pop();
@@ -182,7 +175,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            color: Colors.white,
+            color: Colors.indigo[100],
             child: Padding(
               padding: const EdgeInsets.all(36.0),
               child: Form(
@@ -191,11 +184,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(
-                        height: 180,
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
                         child: Image.network(
-                          "https://imgs.search.brave.com/EiBB7QXBTdr3Ih8VH-R88fy1V2e62v7QIVb8SAjyRpg/rs:fit:976:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5v/aU5jUGxxTHAyS1Vj/a2s1dnQ3REd3SGFE/bSZwaWQ9QXBp",
+                          "https://wallpapercave.com/wp/wp2848043.jpg",
                           fit: BoxFit.contain,
+                          width: 400,
                         )),
                     SizedBox(height: 45),
                     emailField,
@@ -215,7 +209,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       ),
     );
   }
-
 
   // void signUp(String email, String password) async {
   //   if (_formKey.currentState!.validate()) {
@@ -270,7 +263,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   //   // writing all the values
   //   userModel.email = user!.email;
   //   userModel.uid = user.uid;
-   
+
   //   await firebaseFirestore
   //       .collection("users")
   //       .doc(user.uid)

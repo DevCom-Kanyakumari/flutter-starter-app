@@ -12,10 +12,16 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter Starter App'),
-      ),
       backgroundColor: Colors.white,
+      body: Center(
+        child: ClipRRect(
+            borderRadius: BorderRadius.circular(8.0),
+            child: Image.asset(
+              'img/hello.gif',
+              fit: BoxFit.contain,
+              width: 400,
+            )),
+      ),
     );
   }
 }

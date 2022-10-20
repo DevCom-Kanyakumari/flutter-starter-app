@@ -160,12 +160,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
 
     return Scaffold(
-      backgroundColor: Colors.indigo[50],
+      backgroundColor: Colors.indigo[100],
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.red),
+          icon: Icon(Icons.arrow_back, color: Colors.indigoAccent),
           onPressed: () {
             // passing this to our root
             Navigator.of(context).pop();
@@ -175,7 +175,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            color: Colors.indigo[50],
+            color: Colors.indigo[100],
             child: Padding(
               padding: const EdgeInsets.all(36.0),
               child: Form(

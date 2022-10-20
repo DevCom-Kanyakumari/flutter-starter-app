@@ -135,11 +135,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(
-                        height: 200,
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
                         child: Image.network(
                           "https://wallpaper.dog/large/17072023.jpg",
                           fit: BoxFit.contain,
+                          width: 400,
                         )),
                     SizedBox(height: 45),
                     emailField,
